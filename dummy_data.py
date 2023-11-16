@@ -1,5 +1,13 @@
-from faker import Faker
+"""Django's command-line utility for administrative tasks."""
+import os, django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
+django.setup()
+
+
+
 import random
+from faker import Faker
 from book.models import Auther, Book, Review
 
 def create_auther(n):
@@ -9,7 +17,7 @@ def create_auther(n):
             name = faker.name(),
             biography = faker.text(),
         )
-    print(f'{n}auther added')
+    print(f'{n} auther added')
 
 
 def create_book(n):
@@ -20,7 +28,7 @@ def create_book(n):
             title = faker.name(),
             price = random.randint(1000,4000),
         )
-    print(f'{n}book added')
+    print(f'{n} book added')
 
 def create_review(n):
     faker = Faker()
@@ -31,9 +39,9 @@ def create_review(n):
             content = faker.text(),
             rating = random.randint(1,5),
         )
-    print(f'{n}review added')
+    print(f'{n} review added')
 
 
-create_auther(10)
-#create_book(10)
-#create_review(10)
+create_auther(100)
+create_book(1000)
+create_review(1000)
