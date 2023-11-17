@@ -15,12 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from book.api import BookListAPI,AutherListAPI
+from book.api import BookListAPI,AutherListAPI,BookDetailAPI, AutherDetailAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+
+
     path('book/api', BookListAPI.as_view() ),
     path('book/apii', AutherListAPI.as_view() ),
+    path('book/detail/<int:pk>', BookDetailAPI.as_view() ),
+    path('book/detaill/<int:pk>', AutherDetailAPI.as_view()),
 
 ]
