@@ -5,6 +5,7 @@ class Auther(models.Model):
     name = models.CharField(max_length=50)
     birth_date = models.DateField(default=timezone.now)
     biography = models.TextField(max_length=1000) 
+    book = models.ForeignKey('Book' ,on_delete=models.CASCADE, related_name='auther_book')
 
     def __str__(self):
         return self.name
@@ -14,6 +15,7 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     publication_date = models.DateField(default=timezone.now)
     price = models.PositiveIntegerField()
+    review = models.ForeignKey('Review' ,on_delete=models.CASCADE, related_name='book_review')
 
     def __str__(self):
         return self.title
