@@ -1,2 +1,2 @@
 # Book-s-Auther
-API for Books and its Auther and its Review
+is an API built using Django and Python that provides functionality for managing books, authors, and their reviews. It serves as a backend system for handling operations related to books, authors, and their associated reviews. The API allows users to perform actions such as creating new books and authors, associating authors with books, adding reviews for books, and retrieving information about books, authors, and reviews. The repository utilizes the Django framework and the Django Rest Framework to build a robust and scalable API for managing book-related dat
